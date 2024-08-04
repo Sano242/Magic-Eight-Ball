@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Sangsoo Park">
+  <title>magic-eight-ball</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  
+  <script>
+
+    // Array containing all possible answers the "magic eight ball" can give.
+    const options = ["It is Certain", "Reply Hazy, Try Again", "Don't Count on It", "Signs Point to Yes", "Ask Again Later", "My Reply is No", "Without a Doubt", "Cannot Predict Now"];
+
+    // Variable for determining which answer the magic eight ball will give.
+    let index = 0;
+
+    // Variable for collecting user input
+    let question = "yes";
+
+    // Displays welcome message to the user.
+    alert("Welcome to the Magic 8 Ball! Ask a yes or no question and I will give you an answer.");
+
+    // While loop that will continue to ask the user for a question until they enter "no"
+    while (question != "no" && question == "yes"){
+
+      // Generates a random number between 0 and 7, used for determining which answer the magic eight ball will give.
+      let index = Math.floor(Math.random()*8);
+      question = prompt("What is your question?"); //This doesn't matter
+
+      // Shows the user the answer the magic eight ball gave.
+      alert(options[index]);
+
+      // Asks the user if they want to ask another question.
+      question = prompt("Would you like to ask another question? Type \"yes\" to ask another question or \"no\" to stop.");
+
+      //Lowercases answer for standarization.
+      question = question.toLowerCase();
+
+      // Loops until the user enters "yes" or "no", case insensitive.
+      while(question != "yes" && question != "no"){
+
+        question = prompt("Invalid Input. Please type \"yes\" to ask another question or \"no\" to stop.");
+        question = question.toLowerCase();
+        
+      }
+      
+    }
+    
+  </script>
+</body>
+
+</html>
